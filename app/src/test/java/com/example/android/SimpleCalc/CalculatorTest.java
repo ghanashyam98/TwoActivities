@@ -90,11 +90,10 @@ public class CalculatorTest {
         assertThat(resultDiv, is(equalTo(Double.POSITIVE_INFINITY)));
     }*/
 
-    @Test
-    public void divByZeroThrows()  throws IllegalArgumentException{
-        double resultDiv1 = mCalculator.div(32d,0);
-        assertThat( resultDiv1,is(equalTo( resultDiv1 )) );
+    @Test(expected = IllegalArgumentException.class)
+    public void divByZeroThrows(){
+        mCalculator.div( 32d, 0 );
+        throw new IllegalArgumentException(  );
     }
-
 
 }
